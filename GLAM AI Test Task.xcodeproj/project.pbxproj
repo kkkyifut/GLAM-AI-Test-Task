@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		CC3694BB29B3ABF70055A65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694BA29B3ABF70055A65A /* AppDelegate.swift */; };
 		CC3694BD29B3ABF70055A65A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694BC29B3ABF70055A65A /* SceneDelegate.swift */; };
-		CC3694BF29B3ABF70055A65A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694BE29B3ABF70055A65A /* ViewController.swift */; };
+		CC3694BF29B3ABF70055A65A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694BE29B3ABF70055A65A /* MainViewController.swift */; };
 		CC3694C229B3ABF70055A65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3694C029B3ABF70055A65A /* Main.storyboard */; };
 		CC3694C429B3ABF80055A65A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3694C329B3ABF80055A65A /* Assets.xcassets */; };
 		CC3694C729B3ABF80055A65A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3694C529B3ABF80055A65A /* LaunchScreen.storyboard */; };
+		CC3694D029B3B8900055A65A /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694CF29B3B8900055A65A /* TemplateViewController.swift */; };
+		CC3694D429B3B9520055A65A /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3694D329B3B9520055A65A /* MusicPlayer.swift */; };
+		CC3694D629B3BA930055A65A /* music.aac in Resources */ = {isa = PBXBuildFile; fileRef = CC3694D529B3BA930055A65A /* music.aac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC3694B729B3ABF70055A65A /* GLAM AI Test Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GLAM AI Test Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3694BA29B3ABF70055A65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC3694BC29B3ABF70055A65A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC3694BE29B3ABF70055A65A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC3694BE29B3ABF70055A65A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CC3694C129B3ABF70055A65A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC3694C329B3ABF80055A65A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC3694C629B3ABF80055A65A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC3694C829B3ABF80055A65A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC3694CF29B3B8900055A65A /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		CC3694D329B3B9520055A65A /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		CC3694D529B3BA930055A65A /* music.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = music.aac; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		CC3694B929B3ABF70055A65A /* GLAM AI Test Task */ = {
 			isa = PBXGroup;
 			children = (
-				CC3694BA29B3ABF70055A65A /* AppDelegate.swift */,
-				CC3694BC29B3ABF70055A65A /* SceneDelegate.swift */,
-				CC3694BE29B3ABF70055A65A /* ViewController.swift */,
-				CC3694C029B3ABF70055A65A /* Main.storyboard */,
 				CC3694C329B3ABF80055A65A /* Assets.xcassets */,
 				CC3694C529B3ABF80055A65A /* LaunchScreen.storyboard */,
+				CC3694C029B3ABF70055A65A /* Main.storyboard */,
 				CC3694C829B3ABF80055A65A /* Info.plist */,
+				CC3694BA29B3ABF70055A65A /* AppDelegate.swift */,
+				CC3694BC29B3ABF70055A65A /* SceneDelegate.swift */,
+				CC3694CE29B3B8510055A65A /* Controller */,
+				CC3694D129B3B9220055A65A /* Helpers */,
 			);
 			path = "GLAM AI Test Task";
+			sourceTree = "<group>";
+		};
+		CC3694CE29B3B8510055A65A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC3694BE29B3ABF70055A65A /* MainViewController.swift */,
+				CC3694CF29B3B8900055A65A /* TemplateViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CC3694D129B3B9220055A65A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CC3694D229B3B9280055A65A /* MusicPlayer */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CC3694D229B3B9280055A65A /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CC3694D329B3B9520055A65A /* MusicPlayer.swift */,
+				CC3694D529B3BA930055A65A /* music.aac */,
+			);
+			path = MusicPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3694C729B3ABF80055A65A /* LaunchScreen.storyboard in Resources */,
+				CC3694D629B3BA930055A65A /* music.aac in Resources */,
 				CC3694C429B3ABF80055A65A /* Assets.xcassets in Resources */,
 				CC3694C229B3ABF70055A65A /* Main.storyboard in Resources */,
 			);
@@ -138,8 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC3694BF29B3ABF70055A65A /* ViewController.swift in Sources */,
+				CC3694BF29B3ABF70055A65A /* MainViewController.swift in Sources */,
 				CC3694BB29B3ABF70055A65A /* AppDelegate.swift in Sources */,
+				CC3694D029B3B8900055A65A /* TemplateViewController.swift in Sources */,
+				CC3694D429B3B9520055A65A /* MusicPlayer.swift in Sources */,
 				CC3694BD29B3ABF70055A65A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,8 +329,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +340,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyifut.GLAM-AI-Test-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +362,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +373,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyifut.GLAM-AI-Test-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
