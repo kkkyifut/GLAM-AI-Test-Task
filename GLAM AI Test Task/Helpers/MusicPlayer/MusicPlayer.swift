@@ -7,6 +7,11 @@ final class MusicPlayer {
     private let soundBackgroundTemplate = "music"
     private let soundTypeAAC = "aac"
     
+    var currentMusicDuration: Float? {
+        return Float(audioPlayerTemplate?.duration ?? 0)
+    }
+
+    
     func startTemplateMusic() {
         if let bundle = Bundle.main.path(forResource: soundBackgroundTemplate, ofType: soundTypeAAC) {
             let templateMusic = NSURL(fileURLWithPath: bundle)

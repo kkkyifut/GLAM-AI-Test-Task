@@ -5,7 +5,7 @@ final class TemplateViewController: UIViewController {
     private var timer: Timer?
     private var timeNeeded: Float = 10
     private var timeLeft: Float = 10
-    private var timeInterval: TimeInterval = 0.05
+    private let timeInterval: TimeInterval = 0.05
     
     @IBOutlet weak private var originalImage: UIImageView!
     @IBOutlet weak private var cutTransImage: UIImageView!
@@ -22,8 +22,39 @@ final class TemplateViewController: UIViewController {
         startTimerProgress()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        musicPlayer.startTemplateMusic()
+        timeNeeded = musicPlayer.currentMusicDuration ?? timeNeeded
+        timeLeft = timeNeeded
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private func startTimerProgress() {
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(onTimeFires), userInfo: nil, repeats: true)
+        timer?.tolerance = timeInterval
+    }
+    
+    @objc private func onTimeFires() {
+        updateProgressBar()
+        timeLeft -= Float(timeInterval)
+        
+        if timeLeft <= 0 {
+            stopTimerProgress()
+            timeLeft = timeNeeded
+        }
+    }
+    
+    private func stopTimerProgress() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    private func updateProgressBar() {
+        progressBar.progress = (timeNeeded - timeLeft) / timeNeeded
     }
     
     private func createTemplateAnimations() {
@@ -153,7 +184,7 @@ final class TemplateViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                     newImageTransBack.transform = CGAffineTransform(scaleX: 1.17, y: 1.17)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-                        newImageTransBack.transform = CGAffineTransform(scaleX: 1, y: 1)
+                        newImageTransBack.transform = .identity
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             newImageTransBack.removeFromSuperview()
                             self.originalImage.image = newImageTransBack.image
@@ -163,29 +194,5 @@ final class TemplateViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    private func startTimerProgress() {
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(onTimeFires), userInfo: nil, repeats: true)
-        timer?.tolerance = timeInterval
-    }
-    
-    private func stopTimerProgress() {
-        timer?.invalidate()
-        timer = nil
-    }
-    
-    @objc private func onTimeFires() {
-        updateProgressBar()
-        timeLeft -= Float(timeInterval)
-        
-        if timeLeft <= 0 {
-            stopTimerProgress()
-            timeLeft = timeNeeded
-        }
-    }
-    
-    private func updateProgressBar() {
-        progressBar.progress = (timeNeeded - timeLeft) / timeNeeded
     }
 }

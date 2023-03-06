@@ -4,9 +4,7 @@ final class MainViewController: UIViewController {
     private let musicPlayer = MusicPlayer.shared
     private let storyboardInstance = UIStoryboard(name: "Main", bundle: .main)
 
-    @IBAction func toTemplateVC(_ sender: UIButton) {
-        musicPlayer.startTemplateMusic()
-        
+    @IBAction func toTemplateVC(_ sender: UIButton) {        
         let templateVC = storyboardInstance.instantiateViewController(withIdentifier: "TemplateViewController") as! TemplateViewController
         self.navigationController?.pushViewController(templateVC, animated: true)
     }
