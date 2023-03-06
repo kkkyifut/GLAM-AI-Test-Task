@@ -61,9 +61,12 @@ final class TemplateViewController: UIViewController {
         let newImageTrans = UIImageView(image: UIImage(named: "image-7-resultTrans"))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.3) { [self] in
-            cutTransImage.image = newImageTrans.image
+            newImageTrans.frame = originalImage.frame
+            cutTransImage.addSubview(newImageTrans)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) { [self] in
+            newImageTrans.removeFromSuperview()
+            cutTransImage.image = newImageTrans.image
             originalImage.image = newImageTransBack.image
         }
     }
@@ -73,9 +76,12 @@ final class TemplateViewController: UIViewController {
         let newImageTrans = UIImageView(image: UIImage(named: "image-6-resultTrans"))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.2) { [self] in
-            cutTransImage.image = newImageTrans.image
+            newImageTrans.frame = originalImage.frame
+            cutTransImage.addSubview(newImageTrans)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { [self] in
+            newImageTrans.removeFromSuperview()
+            cutTransImage.image = newImageTrans.image
             originalImage.image = newImageTransBack.image
         }
     }
@@ -87,9 +93,9 @@ final class TemplateViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.1) { [self] in
             newImageTransBack.frame = originalImage.frame
             originalImage.addSubview(newImageTransBack)
-            newImageTransBack.transform = CGAffineTransform(scaleX: 1.2, y: 1.2).rotated(by: 0.15)
+            newImageTransBack.transform = CGAffineTransform(scaleX: 1.2, y: 1.2).rotated(by: 0.2)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                newImageTransBack.transform = CGAffineTransform(scaleX: 1, y: 1).rotated(by: 0.15)
+                newImageTransBack.transform = CGAffineTransform(scaleX: 1, y: 1).rotated(by: 0.2)
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 self.cutTransImage.image = newImageTrans.image
@@ -122,7 +128,7 @@ final class TemplateViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.2) { [self] in
             newImageTrans.frame = originalImage.frame
-            newImageTrans.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
+            newImageTrans.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
             cutTransImage.addSubview(newImageTrans)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.originalImage.image = newImageTransBack.image
@@ -146,9 +152,9 @@ final class TemplateViewController: UIViewController {
                 newImageTransBack.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                     newImageTransBack.transform = CGAffineTransform(scaleX: 1.17, y: 1.17)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        newImageTransBack.transform = .identity
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                        newImageTransBack.transform = CGAffineTransform(scaleX: 1, y: 1)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             newImageTransBack.removeFromSuperview()
                             self.originalImage.image = newImageTransBack.image
                             self.cutTransImage.image = newImageTrans.image
